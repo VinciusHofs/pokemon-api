@@ -1,0 +1,41 @@
+/*header's style*/
+
+.options {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: red;
+    height: 100%;
+    width: 20%;
+}
+
+.pokeville {
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: xx-large;
+    letter-spacing: 3px;
+    margin-left: 2%;
+    margin-top: -10px;
+}
+
+.navegation {
+    display: flex;
+    justify-content: center;
+    margin-top: -1px;
+    color: aliceblue;
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: larger;
+    letter-spacing: 2px;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: aqua;
+}
