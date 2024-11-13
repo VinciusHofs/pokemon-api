@@ -1,12 +1,18 @@
 /*header's style*/
 
+.domain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .options {
     display: flex;
     flex-direction: column;
     position: fixed;
     background-color: red;
     height: 100%;
-    width: 20%;
+    width: 15%;
 }
 
 .pokeville {
@@ -31,11 +37,31 @@
 }
 
 
-main {
+.main {
     display: flex;
+    justify-self: center;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 50%;
+    margin-left: 15%;
+    width: 65%;
     background-color: aqua;
+}
+
+.pokegame {
+    display: flex;
+    justify-self: flex-end;
+    flex-direction: column;
+    background-color: red;
+    height: 100%;
+    width: 25%;
+}
+
+/*pokédex style*/
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #e74c3c;
 }
