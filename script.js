@@ -1,8 +1,12 @@
+
+//FUNÇÃO DE CONSEGUIR RANDOMIZAR E JOGAR OS NUMÉROS ALEATÓRIOS PARA API
 async function inputData() {
+    //DECLARAÇÃO DE VARIAVEIS
     i=0
     valueFalse=Int8Array
     valueFalse1=Int8Array
     valueTrue=Int8Array
+    //LOOP PARA RANDOMIZAR E SEPARAR OS VALORES DEFINIDOS
     while(i<3){ 
         randomNumber = Math.floor(Math.random()* 1025)+1;
         if(i==0){
@@ -15,15 +19,18 @@ async function inputData() {
         }
         i+=1
     }
+    //RETORNO E JOGAR PARA API FAZER A BUSCA DE DADOS
     console.log(valueTrue,valueFalse,valueFalse1);
     getPokemons(valueTrue,valueFalse,valueFalse1)
 }
-
+//FUNÇÃO DE FAZER REQUISIÇÃO DA API E TRAZER OS DADOS PARA CADA VARIAVEL ALEATÓRIA DECIDIDA
 async function getPokemons() {
+    //DECLARAÇÃO DE VARIAVEIS
     const url="https://pokeapi.co/api/v2/pokemon/";
     const endpointFalse = `${url}${valueFalse}`; 
     const endpointTrue = `${url}${valueTrue}`; 
     const endpointFalse1 = `${url}${valueFalse1}`; 
+    // TENTATIVA E ERRO
     try {
         const responseTrue=await fetch(endpointTrue);
         const responseFalse=await fetch(endpointFalse);
