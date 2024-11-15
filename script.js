@@ -15,9 +15,7 @@ async function inputData() {
         }
         i+=1
     }
-    console.log(valueTrue);
-    console.log(valueFalse);
-    console.log(valueFalse1);
+    console.log(valueTrue,valueFalse,valueFalse1);
     getPokemons(valueTrue,valueFalse,valueFalse1)
 }
 
