@@ -2,6 +2,8 @@
 //FUNÇÃO DE CONSEGUIR RANDOMIZAR E JOGAR OS NUMÉROS ALEATÓRIOS PARA API
 async function inputData() {
     //DECLARAÇÃO DE VARIAVEIS
+    document.getElementById("textoAcerto").innerText="";
+    document.getElementById("textoErro").innerText="";
     i=0
     valueFalse=Int8Array
     valueFalse1=Int8Array
@@ -20,7 +22,6 @@ async function inputData() {
         i+=1
     }
     //RETORNO E JOGAR PARA API FAZER A BUSCA DE DADOS
-    console.log(valueTrue,valueFalse,valueFalse1);
     getPokemons(valueTrue,valueFalse,valueFalse1)
 }
 //FUNÇÃO DE FAZER REQUISIÇÃO DA API E TRAZER OS DADOS PARA CADA VARIAVEL ALEATÓRIA DECIDIDA
@@ -39,11 +40,29 @@ async function getPokemons() {
         const dataTrue = await responseTrue.json();
         const dataFalse = await responseFalse.json();
         const dataFalse1 = await responseFalse1.json();
-        console.log(dataTrue,dataFalse,dataFalse1)
-        return dataTrue,dataFalse,dataFalse1;
+        const imageApi_pokemonTrue = dataTrue.sprites.front_default;
 
+        const namePokemonFalse = dataFalse.name;
+        const namePokemonFalse1 = dataFalse1.name;
+        const namePokemonTrue = dataTrue.name;
+
+
+        document.getElementById("imagePoke").src = imageApi_pokemonTrue;
+
+        document.getElementById("falsePokemon").innerHTML = namePokemonFalse.toUpperCase();
+        document.getElementById("truePokemon").innerHTML = namePokemonTrue.toUpperCase();
+        document.getElementById("falsePokemon1").innerHTML = namePokemonFalse1.toUpperCase();
+        return namePokemonTrue;
     } catch (error) {
         console.error('Error fetching data:', error);
         return null;
     }
+}
+
+async function questionCorrect() {
+    document.getElementById("textoAcerto").innerText="Você acertou, parabéns Treinador!";
+}
+
+async function questionFailed() {
+    document.getElementById("textoErro").innerText="Você errou, tente novamente!";
 }
