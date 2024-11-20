@@ -1,9 +1,6 @@
-
 //FUNÇÃO DE CONSEGUIR RANDOMIZAR E JOGAR OS NUMÉROS ALEATÓRIOS PARA API
 async function inputData() {
     //DECLARAÇÃO DE VARIAVEIS
-    document.getElementById("textoAcerto").innerText="";
-    document.getElementById("textoErro").innerText="";
     i=0
     valueFalse=Int8Array
     valueFalse1=Int8Array
@@ -45,24 +42,21 @@ async function getPokemons() {
         const namePokemonFalse = dataFalse.name;
         const namePokemonFalse1 = dataFalse1.name;
         const namePokemonTrue = dataTrue.name;
-
-
         document.getElementById("imagePoke").src = imageApi_pokemonTrue;
-
-        document.getElementById("falsePokemon").innerHTML = namePokemonFalse.toUpperCase();
-        document.getElementById("truePokemon").innerHTML = namePokemonTrue.toUpperCase();
-        document.getElementById("falsePokemon1").innerHTML = namePokemonFalse1.toUpperCase();
+        const valueSort = [namePokemonFalse, namePokemonFalse1, namePokemonTrue];
+        for (var j = 0; j < 3;j++) {
+            let randomIndex = Math.floor(Math.random() * valueSort.length);
+            let randomValue = valueSort[randomIndex]; 
+            console.log(valueSort);
+            document.getElementById("optionsPokemon"+ (j+1)).innerText = randomValue.toUpperCase();
+        }
         return namePokemonTrue;
-    } catch (error) {
+        }catch (error) {
         console.error('Error fetching data:', error);
         return null;
     }
 }
 
-async function questionCorrect() {
-    document.getElementById("textoAcerto").innerText="Você acertou, parabéns Treinador!";
-}
-
-async function questionFailed() {
-    document.getElementById("textoErro").innerText="Você errou, tente novamente!";
+async function questionSelect() {
+    document.getElementById("textoSelect").innerText="Você acertou, parabéns Treinador!";
 }

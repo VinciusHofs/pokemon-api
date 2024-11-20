@@ -40,11 +40,10 @@
             <h1 id="game">Tente adivinhar qual pokemon da foto!</h1>
             <div id="pokemon-list">
                 <img id="imagePoke">
-                <button id="falsePokemon"onclick="questionFailed()""></button>
-                <button id="truePokemon" onclick="questionCorrect()"></button>
-                <button id="falsePokemon1"onclick="questionFailed()""></button>
-                <p id="textoAcerto"></p>
-                <p id="textoErro"></p>
+                <button id="optionsPokemon1"onclick="questionSelect()"></button>
+                <button id="optionsPokemon2" onclick="questionSelect()"></button>
+                <button id="optionsPokemon3"onclick="questionSelect()"></button>
+                <p id="textoSelect"></p>
             </div>
             <button class="button-pokemon" onclick="inputData()">Jogar</button>
             <script src="script.js"></script>
