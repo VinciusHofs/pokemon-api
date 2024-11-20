@@ -81,3 +81,10 @@ async function questionSelect(selectOption) {
         inputData();
     }, 2000); // 2000 milissegundos = 2 segundos
 }
+
+async function resetData() {
+    document.getElementById("correctPokemon").innerText="Sua contagem de acertos de pokemon foi de:"+0;
+    document.getElementById("failedPokemon").innerText="Sua contagem de erros de pokemon foi de:"+0;
+    b=0;
+    x=0;
+}
