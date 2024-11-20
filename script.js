@@ -2,6 +2,7 @@
 async function inputData() {
     //DECLARAÇÃO DE VARIAVEIS
     i=0
+    document.getElementById("textoSelect").innerText = "";
     valueFalse=Int8Array
     valueFalse1=Int8Array
     valueTrue=Int8Array
@@ -44,11 +45,18 @@ async function getPokemons() {
         const namePokemonTrue = dataTrue.name;
         document.getElementById("imagePoke").src = imageApi_pokemonTrue;
         const valueSort = [namePokemonFalse, namePokemonFalse1, namePokemonTrue];
-        for (var j = 0; j < 3;j++) {
-            let randomIndex = Math.floor(Math.random() * valueSort.length);
-            let randomValue = valueSort[randomIndex]; 
-            console.log(valueSort);
-            document.getElementById("optionsPokemon"+ (j+1)).innerText = randomValue.toUpperCase();
+        let usedIndexes = [];
+        for (var j = 0; j < 3; j++) {
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * valueSort.length);
+            } while (usedIndexes.includes(randomIndex));
+            let randomValue = valueSort[randomIndex];
+            usedIndexes.push(randomIndex);
+            document.getElementById("optionsPokemon" + (j + 1)).innerText = randomValue.toUpperCase();
+            if (randomValue===namePokemonTrue){
+                correctIndex = j+1;
+            }
         }
         return namePokemonTrue;
         }catch (error) {
@@ -56,7 +64,20 @@ async function getPokemons() {
         return null;
     }
 }
-
-async function questionSelect() {
-    document.getElementById("textoSelect").innerText="Você acertou, parabéns Treinador!";
+let b = 0;
+let x = 0;
+async function questionSelect(selectOption) {
+    if(selectOption==correctIndex){
+        document.getElementById("textoSelect").innerText = "Você acertou o pokemon! parabéns pela tentativa, aguarde para próxima tentativa!"
+        b++;
+    }
+    else{
+        document.getElementById("textoSelect").innerText = "Você errou o pokemon! aguarde para próxima tentativa!"
+        x++;
+    }
+    document.getElementById("correctPokemon").innerText="Sua contagem de acertos de pokemon foi de:"+b;
+    document.getElementById("failedPokemon").innerText="Sua contagem de erros de pokemon foi de:"+x;
+    setTimeout(() => {
+        inputData();
+    }, 2000); // 2000 milissegundos = 2 segundos
 }
