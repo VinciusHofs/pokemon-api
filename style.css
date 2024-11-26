@@ -5,6 +5,11 @@
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
   }
+
+  a {
+    font-family: 'Pokemon Solid', sans-serif;
+    color: aliceblue;
+  }
   
   /* Corpo da página */
   body {
@@ -12,7 +17,6 @@
     justify-content: flex-start;
     align-items: flex-start;
     min-height: 100vh;
-    background-color: aqua;
     flex-direction: row;
   }
   
@@ -65,7 +69,6 @@
     align-items: center;
     margin-left: 15%;
     width: 65%;
-    background-color: aqua;
     padding: 20px;
     border-radius: 8px;
   }

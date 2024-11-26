@@ -18,8 +18,54 @@ body {
 }
 
 h1 {
-  font-family: "Pokemon Solid", sans-serif;
-  letter-spacing: 5px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Pokemon Solid', sans-serif;
+  color: aliceblue;
+  letter-spacing: 2px;
+}
+
+a {
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: larger;
+  color: aliceblue;
+  letter-spacing: 2px;
+}
+
+.domain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background-color: red;
+  height: 100%;
+  width: 15%;
+  padding-top: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.navegation {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15%;
+
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .pokeContainer {
