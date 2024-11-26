@@ -269,6 +269,20 @@
   
   p {
     font-size: 18px;
-    color: rgb(253, 253, 253);
+    color: rgb(100, 99, 99);
   }
   
+.textoSelect {
+  font-size: 18px;
+  color: aliceblue;
+}
+
+.correctPokemon {
+  font-size: 18px;
+  color: aliceblue;
+}
+
+.failedPokemon {
+  font-size: 18px;
+  color: aliceblue;
+}
