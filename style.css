@@ -272,17 +272,17 @@
     color: rgb(100, 99, 99);
   }
   
-.textoSelect {
+#textoSelect {
   font-size: 18px;
   color: aliceblue;
 }
 
-.correctPokemon {
+#correctPokemon {
   font-size: 18px;
   color: aliceblue;
 }
 
-.failedPokemon {
+#failedPokemon {
   font-size: 18px;
   color: aliceblue;
 }
